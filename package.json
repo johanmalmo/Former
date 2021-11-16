@@ -4,11 +4,11 @@
     "description": "A UI form creater",
     "scripts": {
         "dev": "next dev -H 0.0.0.0",
-        "build": "next build",
+        "build": "rm -rf ./build && NODE_ENV=production next build",
         "prittier": "prettier -write .",
         "lint": "next lint",
         "migrate": "node-pg-migrate",
-        "start": "next start"
+        "start": "next start -p 8080"
     },
     "keywords": [],
     "author": "Sebastian Palmqvist<mystichal@live.com>",
