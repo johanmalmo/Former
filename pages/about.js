@@ -2,13 +2,13 @@ import {
     Container,
     Box,
     Heading,
-    Image,
-    Link,
+    // Image,
+    // Link,
     useColorModeValue
 } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import Paragraph from '../components/paragraph'
+// import Paragraph from '../components/paragraph'
 import {TupleSection, TuplePrefix} from '../components/tuple'
 
 const About = () => {

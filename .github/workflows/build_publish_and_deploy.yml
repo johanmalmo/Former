@@ -1,0 +1,50 @@
+name: Publish new cms version to GAE
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    env:    
+      GITHUB_LOGIN: ${{ github.event.sender.login }}   
+      ACTION_URL: ${{ github.event.check_run.html_url }}
+      #SLACK_CHANNEL: github-updates
+      #SLACK_ICON: https://avatars.githubusercontent.com/u/81235691?s=200&v=4
+      #SLACK_USERNAME:  ${{ github.event.sender.login }}   
+      #SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+      - name: Install dependencies
+        run : cp .env.gcp .env
+      - name: Install dependencies
+        run : npm ci
+      - name: Install dependencies
+        run : npm run build
+      - name: Deploy to App Engine
+        uses: google-github-actions/deploy-appengine@v0.2.0
+        with:
+          deliverables: app.yaml
+          project_id: mailsenderproject-332310
+          credentials: ${{ secrets.GCP_SA_KEY }}
+          promote: true
+          version: v1
+      # - name: Slack Notification failure
+      #   if: ${{ failure() }}
+      #   uses: rtCamp/action-slack-notify@v2
+      #   env:
+      #     SLACK_COLOR: ${{ job.status }}         
+      #     SLACK_MESSAGE: 'Deployment failure please check ${{ env.ACTION_URL }} :warning:'
+      #     SLACK_TITLE: Deployment failure    
+      # - name: Slack Notification success
+      #   if: ${{ success() }}
+      #   uses: rtCamp/action-slack-notify@v2
+      #   env:
+      #     SLACK_COLOR: ${{ job.status }}         
+      #     SLACK_MESSAGE: 'Deployment success :rocket:  and verify your latest changes.'
+      #     SLACK_TITLE: Deployment success 

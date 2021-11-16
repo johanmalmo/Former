@@ -3,15 +3,15 @@ import {
 	signIn,
 	signOut
 } from 'next-auth/client'
-import {
-    Container,
-    SimpleGrid,
-    Heading,
-    useColorModeValue
-} from '@chakra-ui/react'
+// import {
+//     Container,
+//     SimpleGrid,
+//     Heading,
+//     useColorModeValue
+// } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
-import Section from '../components/section'
-import {IndexGridItem} from '../components/grid-item'
+// import Section from '../components/section'
+// import {IndexGridItem} from '../components/grid-item'
 
 const Index = () => {
 	const session = useSession()
