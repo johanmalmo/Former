@@ -12,22 +12,12 @@
 # below:
 .git
 .gitignore
-
 node_modules
-app.yaml
 README.md
-prettier.config.js
 .dockerignore
 .env.example
 .env.gcp
-.eslintrc.json
 .gitignore
 .prettierignore
 docker-compose.yml
 entrypoint.sh
-components/
-lib/
-migrations/
-models/
-pages/
-queries/
