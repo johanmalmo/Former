@@ -1,4 +1,3 @@
 module.export = {
-    reactStrictMode: true,
-    distDir: 'build',
+    reactStrictMode: true
 }

@@ -4,7 +4,7 @@
     "description": "A UI form creater",
     "scripts": {
         "dev": "next dev -H 0.0.0.0",
-        "build": "rm -rf ./build && NODE_ENV=production next build",
+        "build": "NODE_ENV=production next build",
         "prittier": "prettier -write .",
         "lint": "next lint",
         "migrate": "node-pg-migrate",
