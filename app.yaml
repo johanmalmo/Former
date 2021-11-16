@@ -9,7 +9,7 @@ handlers:
   redirect_http_response_code: 301
 
 vpc_access_connector:
-  name: "projects/mailsenderproject-332310/locations/europe-north1/connectors/vpc-ac"
+  name: "projects/mailsenderproject-332310/locations/europe-west1/connectors/vpc-ac"
 
 automatic_scaling:
   target_cpu_utilization: 0.65
