@@ -1,6 +1,6 @@
 {
     "name": "former",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "This tool is designed to allow the user to create a web form and connect input data to a databse. This allows the user to sign up for different lists and receive news letters etc.",
     "scripts": {
         "dev": "next dev -H 0.0.0.0",
