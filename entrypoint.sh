@@ -1,3 +1,4 @@
-npm ci
-npx sequelize-cli db:migrate
-npm run dev
+#!/bin/sh 
+npx prisma migrate dev;
+npx prisma generate;
+yarn dev;
