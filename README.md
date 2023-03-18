@@ -25,6 +25,12 @@ $ npm install
 ```
 
 ### Docker
+Create a external docker network:
+
+```
+$ docker network create former_default
+```
+
 Generate containers locally using docker compose:
 
 ```
